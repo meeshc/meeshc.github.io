@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
+
+body {
+	background-color: #f7fcfc;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+table, tr{
+	border: 0px
+	width: 100%;
+	text-align: center;
+	vertical-align: center;
+	padding: 10px;
+	border-spacing: 15px;
+}
+a{
+	font-family: 'Pontano Sans', sans-serif;
+	text-decoration: none;
+	color: #676a6b;
+}
+td {
+	border: 0px;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	vertical-align: center;
+	padding: 10px
+}
+img:hover{
+	opacity: 1;
+}
+
+/*dl.dropboxusercontent.com/s/1m6f7rx22ytrl3z/DSC_0210.jpg?dl=0*/
+
+h1 {
+	font-family: 'Pontano Sans', sans-serif;
+	font-size: 2em;
+	margin: .6em 0;
+	padding-top: 40px;
+	padding-left: 30px;
+}
+h2 {
+	font-family: 'Pontano Sans', sans-serif;
+	margin: 0 0 0 30px;
+	font-size: 14px;
+}
+p {
+	font-family: 'Pontano Sans', sans-serif;
+}
+img {
+	display: block;
+	max-width: 200px;
+	height: auto;
+	opacity: .6;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
