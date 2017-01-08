@@ -1,42 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
 
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 body {
-	margin-top: 50px;
-	margin-bottom: 50px;
-	background: url(https://dl.dropboxusercontent.com/s/53fhosywife7mvp/DSC_0526.jpg?dl=0) no-repeat center center fixed;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-counter-reseto-background-size: cover;
-  	background-size: cover;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: url(https://dl.dropboxusercontent.com/s/53fhosywife7mvp/DSC_0526.jpg?dl=0) no-repeat center center fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -counter-reseto-background-size: cover;
+    background-size: cover;
 }
 
 /*table, tr, td {
-	border: 0px;
-	width: 100%;
-	text-align: center;
-	vertical-align: center;
-	padding: 10px;
+  border: 0px;
+  width: 100%;
+  text-align: center;
+  vertical-align: center;
+  padding: 10px;
 }*/
 
 /*dl.dropboxusercontent.com/s/1m6f7rx22ytrl3z/DSC_0210.jpg?dl=0*/
 
 h1 {
-	font-family: 'Pontano Sans', sans-serif;
-	font-size: 2em;
-	margin: .6em 0;
-	padding-top: 40px;
-	padding-left: 30px;
+  font-family: 'Pontano Sans', sans-serif;
+  font-size: 2em;
+  margin: .6em 0;
+  padding-top: 40px;
+  padding-left: 30px;
 }
 h2 {
-	font-family: 'Pontano Sans', sans-serif;
-	margin: 0 0 0 30px;
-	font-size: 14px;
+  font-family: 'Pontano Sans', sans-serif;
+  margin: 0 0 0 30px;
+  font-size: 14px;
 }
 p {
-	font-family: 'Pontano Sans', sans-serif;
-	margin: 0 0 10px;
+  font-family: 'Pontano Sans', sans-serif;
+  margin: 0 0 10px;
 }
 .container {
   padding-right: 15px;
@@ -66,7 +70,7 @@ p {
   margin-left: auto;
 }
 div.clickable {
-	position:relative;
+  position:relative;
 }
 div.clickable a {
     position:absolute;
@@ -79,4 +83,35 @@ div.clickable a {
     background-color:white; /*workaround to make clickable in IE */
     opacity: 0; /*workaround to make clickable in IE */
     filter: alpha(opacity=1); /*workaround to make clickable in IE */
+}
+.fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+ 
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+ 
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+.fade-in.one {
+-webkit-animation-delay: 0.7s;
+-moz-animation-delay: 0.7s;
+animation-delay: 0.7s;
+}
+ 
+.fade-in.two {
+-webkit-animation-delay: 1.5s;
+-moz-animation-delay:1.5s;
+animation-delay: 1.5s;
+}
+ 
+.fade-in.three {
+-webkit-animation-delay: 2.3s;
+-moz-animation-delay: 2.3s;
+animation-delay: 2.3s;
 }
