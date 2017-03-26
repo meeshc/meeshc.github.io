@@ -40,6 +40,18 @@ b {
   /*background-color: #ebbcad;*/
 }
 
+c {
+  font-family: 'Pontano Sans', sans-serif;
+  text-decoration: none;
+  color: #94b8b8;
+}
+c:hover{
+  font-family: 'Pontano Sans', sans-serif;
+  text-decoration: none;
+  color: #c2d6d6;
+  cursor: pointer;
+}
+
 td {
 	border: 0px;
 	width: 50px;
