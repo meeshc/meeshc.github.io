@@ -7,7 +7,7 @@
 body {
   margin-top: 50px;
   margin-bottom: 50px;
-  background: url(https://dl.dropboxusercontent.com/s/53fhosywife7mvp/DSC_0526.jpg?dl=0) no-repeat center center fixed;
+  background: url(https://dl.dropboxusercontent.com/s/r4uixc3465rvrw6/background1.jpg?dl=0) no-repeat center center fixed;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -28,19 +28,21 @@ body {
 
 h1 {
   font-family: 'Pontano Sans', sans-serif;
-  font-size: 2em;
   margin: .6em 0;
   padding-top: 40px;
   padding-left: 30px;
+  color: #676a6b;
 }
 h2 {
   font-family: 'Pontano Sans', sans-serif;
   margin: 0 0 0 30px;
   font-size: 14px;
+  color: #676a6b;
 }
 p {
   font-family: 'Pontano Sans', sans-serif;
   margin: 0 0 10px;
+  color: #676a6b;
 }
 .container {
   padding-right: 15px;
