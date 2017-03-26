@@ -6,53 +6,87 @@ body {
 	margin-bottom: 50px;
 }
 
+h1 {
+  font-size: 1.25em;
+  font-family: 'Pontano Sans', sans-serif;
+  text-decoration: none;
+  color: #676a6b;
+  text-align: center;
+}
 table, tr{
 	border: 0px
 	width: 100%;
 	text-align: center;
 	vertical-align: center;
-	padding: 10px;
-	border-spacing: 15px;
+	padding: 5px;
+	border-spacing: 5px;
 }
-a{
+a {
 	font-family: 'Pontano Sans', sans-serif;
 	text-decoration: none;
 	color: #676a6b;
 }
+a:hover {
+  font-family: 'Pontano Sans', sans-serif;
+  text-decoration: none;
+  color: #94b8b8;
+}
+
+b {
+  font-family: 'Pontano Sans', sans-serif;
+  text-decoration: none;
+  color: #676a6b;
+  background-color: #c2d6d6;
+  /*background-color: #ebbcad;*/
+}
+
 td {
 	border: 0px;
-	width: 200px;
-	height: 200px;
+	width: 50px;
+	height: 50px;
 	text-align: center;
 	vertical-align: center;
-	padding: 10px
-}
-img:hover{
-	opacity: 1;
-}
-
-/*dl.dropboxusercontent.com/s/1m6f7rx22ytrl3z/DSC_0210.jpg?dl=0*/
-
-h1 {
-	font-family: 'Pontano Sans', sans-serif;
-	font-size: 2em;
-	margin: .6em 0;
-	padding-top: 40px;
-	padding-left: 30px;
-}
-h2 {
-	font-family: 'Pontano Sans', sans-serif;
-	margin: 0 0 0 30px;
-	font-size: 14px;
+	padding: 5px
 }
 p {
 	font-family: 'Pontano Sans', sans-serif;
+  margin: 0 0 0 30px;
+  font-size: 14px;
+  color: #676a6b;
 }
 img {
 	display: block;
 	max-width: 200px;
 	height: auto;
-	opacity: .6;
+  opacity: .85;
+  text-align: center;
+  vertical-align: center;
+}
+
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.modal-contet {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+} 
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #d3d3d3;
+    font-size: 40px;
+    font-weight: bold;
 }
 .container {
   padding-right: 15px;
@@ -80,4 +114,30 @@ img {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+.align-left {
+  float: left;
+}
+.align-right {
+  float: right;
+}
+
+.nav{
+    border: 1px solid #ccc;
+    border-width: 1px 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.nav li{
+    display: inline;
+}
+.nav a{
+    display: inline-block;
+    padding: 10px;
+}
+.nav b{
+    display: inline-block;
+    padding: 10px;
 }
