@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Photography</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+</head>
+
+<body>
+    <u1 class="icons">
+        <li>
+            <a class="#" href="https://www.facebook.com/meeshchuang4"> <img style="max-width: 35px;" src="https://dl.dropboxusercontent.com/s/34cgg2g3hfgxcrn/facebook.png?dl=0" alt="facebook"> </a>
+        </li>
+        <li>
+            <a class="#" href="https://www.instagram.com/meeshchuang/"> <img style="max-width: 35px;" src="https://dl.dropboxusercontent.com/s/a7vdbup9jnj0gza/instagram.png?dl=0"> </a>
+        </li>
+        <li>
+            <a class="#" href="https://github.com/meeshc/"> <img style="max-width: 35px;" src="https://dl.dropboxusercontent.com/s/tf6sct23n5pbj2e/github.png?dl=0"> </a>
+        </li>
+        <li>
+          <a class="#" href="https://www.linkedin.com/in/michellechuang4"> <img style="max-width: 36px;" src="https://dl.dropboxusercontent.com/s/ls677ruanhs924g/linkedin.png?dl=0"> </a>
+        </li>
+    </u1>
+    <br>
+  <ul class="nav">
+    <li><a class="nav_link" href="about.html">about</a></li>
+    <li><b class="nav_link" href="projects.html">projects</b></li>
+    <li><a class="nav_link" href="photography.html">photography</a></li>
+    <li><a class="nav_link" href="design.html">design</a></li>
+  </ul>
+  <div class="container" style="width:75%">
+    <h2>Face Morphing</h2>
+    <p>
+      The focus of this project is to seamlessly transform a source image into a target image. The most prevalent method
+      of accomplishing this shape transformation is called morphing, which involves joining images through warping and
+      color interpolation.<br><br>
+      Before tackling the entire morph sequence, I first constructed the midway face of two faces. To warp the
+      faces into the same shape, I first defined 40 pairs of corresponding points between the two images as you can see
+      in the images below.
+    </p>
+    <table align="center">
+        <tr>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/jf0tb2kjpgdxzdz/kendall_dots.png?dl=0">
+            </td>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/9bhvv62ibanl0tc/me_dots.png?dl=0">
+            </td>
+        </tr>
+    </table>
+    <p>
+      I then averaged each pair of points to get the average shape between the two faces. After finding the average shape,
+      I used Delaunay triangulation to construct triangles from the average points. For each triangle in the shape of the average
+      face, I found the corresponding triangle in both the original images and calculated the affine transformation between
+      these original triangles and the average shape triangle.<br><br>
+      Finally, I used the triangles to warp each of the original faces into the average shape. This is done by using the affine
+      transformation to calculate which location to grab a pixel value from. If the pixel location ended up between locations, such as if the location was (1.4, 2.5), I
+      used SciPy's built in interpolation function to extract the color values. Once the two images are warped to the same face shape,
+      I simply averaged the color values for each pixel location to get the midway face.
+    </p>
+    <table align="center">
+        <tr>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/6anamhehsq3ye0z/kendall_avg_shape.png?dl=0">
+            </td>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/eziguu80uqyrjc7/me_avg_shape.png?dl=0">
+            </td>
+            <td>
+              <img src="https://dl.dropboxusercontent.com/s/j9110cpeeulwu8w/midwayface_40.jpg?dl=0">
+            </td>
+        </tr>
+    </table>
+    <p>
+      Once I figured out how to compute the midface, creating the morph sequence is fairly straightforward. One can think of the
+      midway face as using an even weight of 0.5 for warping and pixel values of the two images. By adjusting the weight gradually, I can
+      create a gradual transformation of my face to Kendall Jenner's. That is, the first frame of the sequence has a weight of my as 1 and
+      a weight for Kendall's face as 0 and vice versa for the last frame. The weight affects how much the face shape and colors of the
+      particular frame looks like each original image.
+    </p>
+    <table align="center">
+        <tr>
+            <td>
+              <img src="https://dl.dropboxusercontent.com/s/ms2bnzzwbi51yc0/me.jpg?dl=0">
+            </td>
+            <td>
+              <img src="https://dl.dropboxusercontent.com/s/ft0r6nsaeyhx8z2/kendall.jpg?dl=0">
+            </td>
+            <td>
+                <img src='https://dl.dropboxusercontent.com/s/622fdc68rz95l4l/morph_both_ways.gif?dl=0'>
+            </td>
+        </tr>
+        <tr>
+          <td>
+            <img src="https://dl.dropboxusercontent.com/s/m6lk4yigqjk2s3b/anne.jpg?dl=0">
+          </td>
+          <td>
+            <img src="https://dl.dropboxusercontent.com/s/4emlzr9l0fjmc39/amy.jpg?dl=0">
+          </td>
+          <td>
+              <img src='https://dl.dropboxusercontent.com/s/abgsnqcn577a7fz/anne_amy_morph.gif?dl=0'>
+          </td>
+        </tr>
+    </table>
+    <div class="description">Credits for Amy Adams and Anne Hathaway portraits go to Martin Schoeller</div>
+  </div>
+</body>
