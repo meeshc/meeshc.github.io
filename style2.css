@@ -21,12 +21,12 @@ table, tr{
 	padding: 5px;
 	border-spacing: 5px;
 }
-a {
+a.nav_link {
 	font-family: 'Pontano Sans', sans-serif;
 	text-decoration: none;
 	color: #676a6b;
 }
-a:hover {
+a.nav_link:hover {
   font-family: 'Pontano Sans', sans-serif;
   text-decoration: none;
   color: #94b8b8;
@@ -40,12 +40,12 @@ b {
   /*background-color: #ebbcad;*/
 }
 
-c {
+a.par {
   font-family: 'Pontano Sans', sans-serif;
   text-decoration: none;
   color: #94b8b8;
 }
-c:hover{
+a.par:hover{
   font-family: 'Pontano Sans', sans-serif;
   text-decoration: none;
   color: #c2d6d6;
@@ -91,7 +91,7 @@ img {
     display: block;
     width: 80%;
     max-width: 700px;
-} 
+}
 .close {
     position: absolute;
     top: 15px;
