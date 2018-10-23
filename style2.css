@@ -68,9 +68,8 @@ p {
 }
 img {
 	display: block;
-	max-width: 200px;
+	max-width: 300px;
 	height: auto;
-  opacity: .85;
   text-align: center;
   vertical-align: center;
 }
