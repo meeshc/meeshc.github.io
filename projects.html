@@ -56,12 +56,14 @@
         </tr>
     </table>
     <p>
+      <img src="https://dl.dropbox.com/s/al1eo1z00lw7yep/affine_triangle.png?dl=0" style="max-width:150px" align="right">
       I then averaged each pair of points to get the average shape between the two faces. After finding the average shape,
       I used Delaunay triangulation to construct triangles from the average points. For each triangle in the shape of the average
       face, I found the corresponding triangle in both the original images and calculated the affine transformation between
-      these original triangles and the average shape triangle.<br><br>
-      Finally, I used the triangles to warp each of the original faces into the average shape. This is done by using the affine
-      transformation to calculate which location to grab a pixel value from. If the pixel location ended up between locations, such as if the location was (1.4, 2.5), I
+      these original triangles and the average shape triangle using the equation to the right.<br><br>
+      Finally, I used the triangles to morph the original faces into the average shape through inverse warping.
+      I calculate the pixel location using the inverse of the affine transformation between corresponding triangles
+      to find the location in the original image to grab a pixel value from: <i>(x, y) = T<sup>-1</sup>(x', y')</i>. If the pixel location ended up between locations, such as if the location was (1.4, 2.5), I
       used SciPy's built in interpolation function to extract the color values. Once the two images are warped to the same face shape,
       I simply averaged the color values for each pixel location to get the midway face.
     </p>
@@ -118,6 +120,79 @@
       For each of the morph sequences, I had 45 frames, so I calculated the face shape, triangulation, and pixel values
       45 different times to create each gif. Overall, the program took around 20 minutes to create each morph
       sequence, but could be sped up if the images were of a smaller size or if I utilized threading.
+    </p>
+    <br>
+    <h2>Gradient Domain Fusion</h2>
+    <p>
+      Gradient-domain processing is a method used to seamlessly blend an object onto another image. When copying an object
+      directly onto a background image, there is an obvious seam since the colors often do not match. It would be ideal to
+      prevent such an edge from existing while still preserving the image being placed (the source image). We can do this by creating
+      the source image with gradients rather than existing pixel values.<br><br>
+      So how does gradient-domain processing work? Essentially, the goal is to recreate some image <i>v</i> that looks as similar
+      to the source image as possible. Rather than being made up of pixel values, we recreate <i>v</i> with gradients, which can be thought
+      of as differences in pixel values from neighbors. This goal comprises the first half
+      of the equation below. We calculate this for all the pixels in the source image except for the border pixels.
+      <br><br>For the border, we want the edge to match that of the target image, so we can simply use the actual pixel value from the target image.
+      This provides another constraint, which you can see in the second half of the equation. Using NumPy's linear algebra solve function,
+      we solve the final equation, minimizing the error, and calculating the values for each pixel of <i>v</i>. Now that <i>v</i> is constructed
+      in relation to the target image, the final result has a seamless transition between the two images.
+      <img style="max-width:500px; margin-left:23%; margin-top: 10px" src="https://dl.dropboxusercontent.com/s/wkxx651yzw8zg77/constraints.png?dl=0">
+    </p>
+    <table align="center">
+        <tr>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/2kcxojib0eplu2s/penguin.jpg?dl=0" style="max-width:175px">
+            </td>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/9gl8xvlgekd6rgb/im3.jpg?dl=0" style="max-width:350px">
+            </td>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/8kp5fqb9bfs2z2d/penguin_snow.png?dl=0" style="max-width:350px">
+            </td>
+        </tr>
+    </table>
+    <p>
+      Since the only change to the source image is the coloration, the best results are when the background texture of
+      the source and target image are the same, such as snow in the example above. Other textures that may work well are
+      sand or water, since they provide a similar level of detail as snow. For the photos below, although the backgrounds
+      are not the same, the texture of the water is smooth enough to be similar to the black background of the dancer,
+      so the results still don't show an edge between the two images.
+    </p>
+    <table align="center">
+        <tr>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/hv7gmwfnpn1ra7i/dancer.jpg?dl=0" style="max-width:250px">
+                <br>
+                <img src="https://dl.dropboxusercontent.com/s/1joj3bi3zox4nh0/underwater.jpg?dl=0" style="max-width:250px">
+            </td>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/fpeak1i9o3p7y9k/underwater_dancer.png?dl=0" style="max-width:550px">
+            </td>
+        </tr>
+    </table>
+    <p>For this picture, I was inspired by the idea of photographing models underwater. I wanted to create a similar type of photo
+      without actually being under the water, so I used an image of a dancer as my source image and the underwater ocean as my
+      target image. There is a slight shadow underneath the dancer, since this was a part of the source image, but it is difficult
+      to see because of how subtle the shadow is to begin with. The shadow can't be removed because gradient domain fusion only adjusts
+      the pixel values, not their contrast to each other.
+    <table align="center">
+        <tr>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/h1cahzeyerkwluy/dragon_newsource.png?dl=0" style="max-width:250px">
+                <br>
+                <img src="https://dl.dropboxusercontent.com/s/x5mwk2l590y2sdf/castle.jpg?dl=0" style="max-width:250px">
+            </td>
+            <td>
+                <img src="https://dl.dropboxusercontent.com/s/ohyr2pp5vojg8gr/dragon_castle.png?dl=0" style="max-width:550px">
+            </td>
+        </tr>
+    </table>
+    <p>
+      Wanting to go in a more whimsical direction, I decided to make it look as if a dragon were flying around the castle in Disneyland.
+      Since the source image is on a plain background, we do not run into issues like the shadow underneath the dancer. As mentioned before, this results
+      in a edgeless final image only when the source is placed in a similarly un-textured background. You can also see that the dragon is a bit darker in the final image. This is because the blue of the
+      sky is darker than the lighter background in the source image, and since we use gradients to create the dragon, the overall pixel
+      values are darker.
     </p>
   </div>
 </body>
