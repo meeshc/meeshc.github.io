@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 body {
-	background-color: #f7fcfc;
+	background-color: #ffffff;
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
 h1 {
   font-size: 1.25em;
-  font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-decoration: none;
   color: #676a6b;
   text-align: center;
 }
 h2 {
-  font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-decoration: none;
   color: #676a6b;
 }
@@ -26,19 +26,34 @@ table, tr{
 	padding: 5px;
 	border-spacing: 5px;
 }
-a.nav_link {
-	font-family: 'Pontano Sans', sans-serif;
+
+.nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+		margin-left: 70%;
+}
+.nav li{
+    display: inline;
+}
+
+.nav_link {
+	font-family: 'Source Sans Pro', sans-serif;
 	text-decoration: none;
 	color: #676a6b;
+	padding: 7px;
+	position: relative;
+	background-image: linear-gradient(to right, white 50%, #c2d6d6 50%);
+  background-position: 1%;
+  background-size: 204%;
+  transition: all 0.4s;
 }
-a.nav_link:hover {
-  font-family: 'Pontano Sans', sans-serif;
-  text-decoration: none;
-  color: #94b8b8;
+.nav_link:hover {
+  background-position: -97.5%;
 }
 
 b {
-  font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-decoration: none;
   color: #676a6b;
   background-color: #c2d6d6;
@@ -46,12 +61,12 @@ b {
 }
 
 a.par {
-  font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-decoration: none;
   color: #94b8b8;
 }
 a.par:hover{
-  font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-decoration: none;
   color: #c2d6d6;
   cursor: pointer;
@@ -66,7 +81,7 @@ td {
 	padding: 5px
 }
 p {
-	font-family: 'Pontano Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
   margin: 0 0 0 30px;
   font-size: 14px;
   color: #676a6b;
@@ -138,25 +153,6 @@ img {
   float: right;
 }
 
-.nav{
-    border: 1px solid #ccc;
-    border-width: 1px 0;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-.nav li{
-    display: inline;
-}
-.nav a{
-    display: inline-block;
-    padding: 10px;
-}
-.nav b{
-    display: inline-block;
-    padding: 10px;
-}
 .icons {
     list-style: none;
     padding: 10px;
@@ -164,21 +160,21 @@ img {
     top: 0px;
     position: absolute;
 }
-.icons li{
+.icon li{
   display: inline-block;
 }
-.icons a{
+.icon a{
     display: inline-block;
     padding: 5px;
 }
 
-.icons a:hover {
+.icon a:hover {
     opacity: .5;
 }
 
 .description {
   text-align: center;
-	font-family: 'Pontano Sans', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   color: #676a6b;
 	border: 2px solid #ccc;
