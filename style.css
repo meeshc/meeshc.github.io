@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background: url(https://dl.dropboxusercontent.com/s/r4uixc3465rvrw6/background1.jpg?dl=0) no-repeat center center fixed;
+  margin-top: 4%;
+  margin-bottom: 5%;
+  margin-left: 9%;
+  margin-right: 9%;
+  /*background: url(https://dl.dropboxusercontent.com/s/r4uixc3465rvrw6/background1.jpg?dl=0) no-repeat center center fixed;*/
+  background-color: white;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -27,93 +34,147 @@ body {
 /*dl.dropboxusercontent.com/s/1m6f7rx22ytrl3z/DSC_0210.jpg?dl=0*/
 
 h1 {
-  font-family: 'Pontano Sans', sans-serif;
-  margin: .6em 0;
-  padding-top: 40px;
-  padding-left: 30px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 10%;
+  padding-left: 7%;
   color: #676a6b;
 }
 h2 {
-  font-family: 'Pontano Sans', sans-serif;
-  margin: 0 0 0 30px;
-  font-size: 14px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-left: 7%;
+  font-size: 15px;
   color: #676a6b;
 }
 p {
-  font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   margin: 0 0 10px;
   color: #676a6b;
-}
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-.container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-div.clickable {
-  position:relative;
-}
-div.clickable a {
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    text-decoration:none; /* Makes sure the link   doesn't get underlined */
-    z-index:10; /* raises anchor tag above everything else in div */
-    background-color:white; /*workaround to make clickable in IE */
-    opacity: 0; /*workaround to make clickable in IE */
-    filter: alpha(opacity=1); /*workaround to make clickable in IE */
 }
 .fade-in {
   opacity:0;  /* make things invisible upon start */
   -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
   -moz-animation:fadeIn ease-in 1;
   animation:fadeIn ease-in 1;
- 
+
   -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
- 
+
   -webkit-animation-duration:1s;
   -moz-animation-duration:1s;
   animation-duration:1s;
 }
-.fade-in.one {
--webkit-animation-delay: 0.7s;
--moz-animation-delay: 0.7s;
-animation-delay: 0.7s;
+
+.fade-in.zero {
+-webkit-animation-delay: 0;
+-moz-animation-delay: 0;
+animation-delay: 0;
 }
- 
+
+.fade-in.one {
+-webkit-animation-delay: 0.5s;
+-moz-animation-delay: 0.5s;
+animation-delay: 0.5s;
+}
+
 .fade-in.two {
+-webkit-animation-delay: 1s;
+-moz-animation-delay:1;
+animation-delay: 1;
+}
+
+.fade-in.three {
 -webkit-animation-delay: 1.5s;
--moz-animation-delay:1.5s;
+-moz-animation-delay: 1.5s;
 animation-delay: 1.5s;
 }
- 
-.fade-in.three {
--webkit-animation-delay: 2.3s;
--moz-animation-delay: 2.3s;
-animation-delay: 2.3s;
+
+#overview {
+  top: 100vh;
+  position: absolute;
+  background-color: #e0ebeb;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  margin-left: -9%;
+}
+
+#overview-body {
+  margin-top: 8%;
+  margin-right: 6%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+  color: #94b8b8;
+  margin-top: 20px;
+  font-size: 15px;
+}
+a:hover{
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+  color: #c2d6d6;
+  cursor: pointer;
+}
+
+.nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+		margin-left: 70%;
+}
+.nav li{
+    display: inline;
+}
+
+.img_link {
+  transition: all .2s ease-in-out;
+}
+
+.img_link:hover {
+  opacity: .8;
+  transform: scale(1.1);
+}
+
+.nav_link {
+	font-family: 'Source Sans Pro', sans-serif;
+	text-decoration: none;
+	color: #676a6b;
+	padding: 7px;
+	position: relative;
+	background-image: linear-gradient(to right, white 50%, #e0ebeb 50%);
+  background-position: 1%;
+  background-size: 206%;
+  transition: all 0.4s;
+}
+.nav_link:hover {
+  background-position: -97.5%;
+}
+
+#title-img {
+  max-width: 375px;
+  margin-top: -3%;
+}
+
+.icons {
+	text-align: center;
+  left: 50%;
+  margin-left: -48px;
+}
+
+.icons li{
+  display: inline-block;
+}
+
+.icon{
+  padding: 5px;
+}
+
+.icon:hover {
+  opacity: .5;
 }
