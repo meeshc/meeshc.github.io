@@ -2,8 +2,14 @@
 
 body {
 	background-color: #ffffff;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 4%;
+  margin-bottom: 7%;
+	margin-left: 9%;
+	margin-right: 9%;
+}
+
+html {
+	overflow-y: scroll;
 }
 
 h1 {
@@ -19,8 +25,7 @@ h2 {
   color: #676a6b;
 }
 table, tr{
-	border: 0px
-	width: 100%;
+	border: 0px;
 	text-align: center;
 	vertical-align: center;
 	padding: 5px;
@@ -43,9 +48,9 @@ table, tr{
 	color: #676a6b;
 	padding: 7px;
 	position: relative;
-	background-image: linear-gradient(to right, white 50%, #c2d6d6 50%);
+	background-image: linear-gradient(to right, white 50%, #e0ebeb 50%);
   background-position: 1%;
-  background-size: 204%;
+  background-size: 206%;
   transition: all 0.4s;
 }
 .nav_link:hover {
@@ -119,57 +124,11 @@ img {
     font-size: 40px;
     font-weight: bold;
 }
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-.container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
 .align-left {
   float: left;
 }
 .align-right {
   float: right;
-}
-
-.icons {
-    list-style: none;
-    padding: 10px;
-    right: 10px;
-    top: 0px;
-    position: absolute;
-}
-.icon li{
-  display: inline-block;
-}
-.icon a{
-    display: inline-block;
-    padding: 5px;
-}
-
-.icon a:hover {
-    opacity: .5;
 }
 
 .description {
@@ -186,4 +145,22 @@ img {
   margin-top: -30px;
   margin-right:-50px;
 	width: 300px;
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.items {
+	padding: 10px;
+	vertical-align: center;
+}
+
+#profile {
+	style=opacity: .95;
+	max-width: 400px;
+	left:50%;
+	margin-left:-200px;
+	position:relative;
 }
