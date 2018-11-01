@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
   margin-bottom: 5%;
   margin-left: 9%;
   margin-right: 9%;
+  /*background: url(https://dl.dropboxusercontent.com/s/r4uixc3465rvrw6/background1.jpg?dl=0) no-repeat center center fixed;*/
   background-color: white;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -107,14 +109,14 @@ animation-delay: 1.5s;
   align-items: center;
 }
 
-a {
+a.par {
   font-family: 'Source Sans Pro', sans-serif;
   text-decoration: none;
   color: #94b8b8;
   margin-top: 20px;
   font-size: 15px;
 }
-a:hover{
+a.par:hover{
   font-family: 'Source Sans Pro', sans-serif;
   text-decoration: none;
   color: #c2d6d6;
